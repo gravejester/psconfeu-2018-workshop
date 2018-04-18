@@ -4,6 +4,7 @@ install:
         Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
         Install-Module platyPS -Force
         Import-Module platyPS
+        git config --global safecrlf false
 
 build_script:
     - ps: |
