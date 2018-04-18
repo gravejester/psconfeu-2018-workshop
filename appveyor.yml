@@ -17,5 +17,5 @@ test_script:
         Update-MarkdownHelp -Path ./docs
         $diff = git diff
         if ($diff) {
-            throw "Help is out of date!"
+            throw "Help is out of date: $diff"
         } 
