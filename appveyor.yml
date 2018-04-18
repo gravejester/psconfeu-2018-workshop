@@ -7,7 +7,8 @@ install:
 
 build_script:
     - ps: |
-        # TODO: create external help in en-US folder
+        Import-Module ./Greet.psm1 -Force
+        Update-MarkdownHelp -Path ./docs
 
 test_script:
     - ps: |
