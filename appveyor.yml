@@ -9,7 +9,7 @@ install:
 
 build_script:
     - ps: |
-        New-MarkdownHelp -Module Greet -OutputFolder .\docs\ -Force
+        New-ExternalHelp -OutputPath en-US -Path ./docs
 
 test_script:
     - ps: |
