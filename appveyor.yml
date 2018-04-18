@@ -8,11 +8,12 @@ install:
 
 build_script:
     - ps: |
-        Import-Module ./Greet.psm1 -Force
-        Update-MarkdownHelp -Path ./docs
+        New-MarkdownHelp -Module Greet -OutputFolder .\docs\ -Force
 
 test_script:
     - ps: |
+        Import-Module ./Greet.psm1 -Force
+        Update-MarkdownHelp -Path ./docs
         $diff = git diff
         if ($diff) {
             throw "Help is out of date!"
