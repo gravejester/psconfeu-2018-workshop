@@ -13,6 +13,6 @@ build_script:
 test_script:
     - ps: |
         $diff = git diff
-        if (-not $diff) {
+        if ($diff) {
             throw "Help is out of date!"
         } 
