@@ -4,8 +4,9 @@ install:
         Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
         Install-Module platyPS -Force
         Import-Module platyPS
-        
-        git config --global core.autocrlf false
+
+init:
+    - git config --global core.autocrlf true 
 
 build_script:
     - ps: |
@@ -17,5 +18,5 @@ test_script:
         Update-MarkdownHelp -Path ./docs
         $diff = git diff
         if ($diff) {
-            throw "Help is out of date: $diff"
+            throw "Help is out of date"
         } 
