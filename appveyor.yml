@@ -14,7 +14,5 @@ test_script:
     - ps: |
         $diff = git diff
         if (-not $diff) {
-            $false
-        } else {
-            $true
-        }
+            throw
+        } 
